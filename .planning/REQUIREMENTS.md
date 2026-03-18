@@ -11,9 +11,9 @@
 - [x] **FOUND-02**: Vite SSR externals configured so map libraries don't crash SSR build
 - [x] **FOUND-03**: Tailwind CSS integrated for styling
 - [x] **FOUND-04**: `.env` file with `NUXT_PUBLIC_MAPBOX_TOKEN` and `NUXT_PUBLIC_HERE_API_KEY` variables (gitignored)
-- [ ] **FOUND-05**: Shared `MarkerData` TypeScript type defined (id, name, description, image, lat, lng, actionLabel, actionUrl)
-- [ ] **FOUND-06**: `useMarkerData` composable returns hardcoded Hanatour POI data (hotels/tour locations in Vietnam)
-- [ ] **FOUND-07**: Shared `MarkerDialog` Vue component displays marker rich content (image, name, description, action link button)
+- [x] **FOUND-05**: Shared `MarkerData` TypeScript type defined (id, name, description, image, lat, lng, actionLabel, actionUrl)
+- [x] **FOUND-06**: `useMarkerData` composable returns hardcoded Hanatour POI data (hotels/tour locations in Vietnam)
+- [x] **FOUND-07**: Shared `MarkerDialog` Vue component displays marker rich content (image, name, description, action link button)
 
 ### List Page
 
@@ -107,9 +107,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUND-02 | Phase 1 | Complete |
 | FOUND-03 | Phase 1 | Complete |
 | FOUND-04 | Phase 1 | Complete |
-| FOUND-05 | Phase 1 | Pending |
-| FOUND-06 | Phase 1 | Pending |
-| FOUND-07 | Phase 1 | Pending |
+| FOUND-05 | Phase 1 | Complete |
+| FOUND-06 | Phase 1 | Complete |
+| FOUND-07 | Phase 1 | Complete |
 | LIST-01 | Phase 1 | Pending |
 | LIST-02 | Phase 1 | Pending |
 | LIST-03 | Phase 1 | Pending |

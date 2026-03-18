@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-18T08:29:37Z"
-last_activity: 2026-03-18 — Plan 01-01 complete; Nuxt 4 foundation + Tailwind CSS v4 scaffolded
+stopped_at: Completed 01-03-PLAN.md
+last_updated: "2026-03-18T08:35:00.706Z"
+last_activity: 2026-03-18 — Plan 01-03 complete; Home page with 5 library cards at / with responsive grid
 progress:
   total_phases: 4
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 1
+  completed_phases: 1
+  total_plans: 3
+  completed_plans: 3
   percent: 0
 ---
 
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 4 (Foundation and Shared UI)
-Plan: 1 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: Executing
-Last activity: 2026-03-18 — Plan 01-01 complete; Nuxt 4 scaffolded with Tailwind CSS v4 and env vars
+Last activity: 2026-03-18 — Plan 01-03 complete; Home page with 5 library cards at / with responsive grid
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -50,6 +50,8 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: -
 
 *Updated after each plan completion*
+| Phase 01-foundation-and-shared-ui P02 | 2 | 2 tasks | 3 files |
+| Phase 01-foundation-and-shared-ui P03 | 1 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -64,6 +66,11 @@ Recent decisions affecting current work:
 - [01-01]: Use `@tailwindcss/vite` (Tailwind v4 native Vite plugin) not `@nuxtjs/tailwindcss` — confirmed correct for Nuxt 4
 - [01-01]: nuxi minimal template used for scaffold; app/app.vue simplified to just `<NuxtPage />`
 - [01-01]: Tailwind v4 pattern: `@import 'tailwindcss'` in CSS + `tailwindcss()` in vite.plugins, no config file
+- [01-03]: Two-container row approach for grid (3+2 split) with `lg:max-w-[calc(66.666%+12px)] lg:mx-auto` centering row 2
+- [01-03]: Card data defined inline in script setup (not useMarkerData) — library metadata is static page content, not POI data
+- [Phase 01-02]: [01-02]: Dialog visibility controlled by null/non-null marker prop — no separate visible boolean
+- [Phase 01-02]: [01-02]: Action button in MarkerDialog is <a> tag (not <button>) since it navigates to actionUrl
+- [Phase 01-02]: [01-02]: No Escape key handler in MarkerDialog per CONTEXT.md — keep it simple
 
 ### Pending Todos
 
@@ -77,6 +84,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-18T08:29:37Z
-Stopped at: Completed 01-01-PLAN.md
-Resume file: .planning/phases/01-foundation-and-shared-ui/01-01-SUMMARY.md
+Last session: 2026-03-18T08:34:56.859Z
+Stopped at: Completed 01-03-PLAN.md
+Resume file: None
