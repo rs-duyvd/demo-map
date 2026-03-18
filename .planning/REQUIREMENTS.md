@@ -17,9 +17,9 @@
 
 ### List Page
 
-- [ ] **LIST-01**: Home page (`/`) displays a grid of library cards — one per map library (5 total)
-- [ ] **LIST-02**: Each card shows: library name, brief description, tech specs (license, WebGL vs raster, bundle size indicator)
-- [ ] **LIST-03**: Each card includes a static preview screenshot and a link to its demo page
+- [x] **LIST-01**: Home page (`/`) displays a grid of library cards — one per map library (5 total)
+- [x] **LIST-02**: Each card shows: library name, brief description, tech specs (license, WebGL vs raster, bundle size indicator)
+- [x] **LIST-03**: Each card includes a static preview screenshot and a link to its demo page
 
 ### Leaflet Demo
 
@@ -110,9 +110,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FOUND-05 | Phase 1 | Complete |
 | FOUND-06 | Phase 1 | Complete |
 | FOUND-07 | Phase 1 | Complete |
-| LIST-01 | Phase 1 | Pending |
-| LIST-02 | Phase 1 | Pending |
-| LIST-03 | Phase 1 | Pending |
+| LIST-01 | Phase 1 | Complete |
+| LIST-02 | Phase 1 | Complete |
+| LIST-03 | Phase 1 | Complete |
 | LEAF-01 | Phase 2 | Pending |
 | LEAF-02 | Phase 2 | Pending |
 | LEAF-03 | Phase 2 | Pending |
