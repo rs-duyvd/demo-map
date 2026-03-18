@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-03-PLAN.md
-last_updated: "2026-03-18T08:35:00.706Z"
+stopped_at: Completed 02-01-PLAN.md — /leaflet demo page
+last_updated: "2026-03-18T12:55:01.755Z"
 last_activity: 2026-03-18 — Plan 01-03 complete; Home page with 5 library cards at / with responsive grid
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation-and-shared-ui P02 | 2 | 2 tasks | 3 files |
 | Phase 01-foundation-and-shared-ui P03 | 1 | 1 tasks | 1 files |
+| Phase 02-first-map-demos P01 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,10 @@ Recent decisions affecting current work:
 - [Phase 01-02]: [01-02]: Dialog visibility controlled by null/non-null marker prop — no separate visible boolean
 - [Phase 01-02]: [01-02]: Action button in MarkerDialog is <a> tag (not <button>) since it navigates to actionUrl
 - [Phase 01-02]: [01-02]: No Escape key handler in MarkerDialog per CONTEXT.md — keep it simple
+- [Phase 02-01]: Dynamic import in onMounted prevents Leaflet's window access during SSR
+- [Phase 02-01]: shallowRef for map instance — Vue proxy traversal on Leaflet internals causes errors
+- [Phase 02-01]: L.divIcon with className: '' removes default white box for clean custom SVG markers
+- [Phase 02-01]: Leaflet CSS in nuxt.config.ts css array for reliable tile layout regardless of mount timing
 
 ### Pending Todos
 
@@ -84,6 +89,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-18T08:34:56.859Z
-Stopped at: Completed 01-03-PLAN.md
+Last session: 2026-03-18T12:55:01.753Z
+Stopped at: Completed 02-01-PLAN.md — /leaflet demo page
 Resume file: None

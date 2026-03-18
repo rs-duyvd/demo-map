@@ -23,13 +23,13 @@
 
 ### Leaflet Demo
 
-- [ ] **LEAF-01**: `/leaflet` demo page renders a Leaflet.js map (CSR-only, `ssr: false`)
-- [ ] **LEAF-02**: Leaflet CSS correctly imported; tile layer renders without layout collapse
-- [ ] **LEAF-03**: Hanatour POI markers rendered with custom SVG/HTML icon (not default Leaflet pin)
-- [ ] **LEAF-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
-- [ ] **LEAF-05**: Zoom in/out controls visible and functional
-- [ ] **LEAF-06**: Library name + version badge displayed on the page
-- [ ] **LEAF-07**: Map instance destroyed on `onUnmounted` (no memory leak on navigation)
+- [x] **LEAF-01**: `/leaflet` demo page renders a Leaflet.js map (CSR-only, `ssr: false`)
+- [x] **LEAF-02**: Leaflet CSS correctly imported; tile layer renders without layout collapse
+- [x] **LEAF-03**: Hanatour POI markers rendered with custom SVG/HTML icon (not default Leaflet pin)
+- [x] **LEAF-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
+- [x] **LEAF-05**: Zoom in/out controls visible and functional
+- [x] **LEAF-06**: Library name + version badge displayed on the page
+- [x] **LEAF-07**: Map instance destroyed on `onUnmounted` (no memory leak on navigation)
 
 ### MapLibre GL Demo
 
@@ -113,13 +113,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LIST-01 | Phase 1 | Complete |
 | LIST-02 | Phase 1 | Complete |
 | LIST-03 | Phase 1 | Complete |
-| LEAF-01 | Phase 2 | Pending |
-| LEAF-02 | Phase 2 | Pending |
-| LEAF-03 | Phase 2 | Pending |
-| LEAF-04 | Phase 2 | Pending |
-| LEAF-05 | Phase 2 | Pending |
-| LEAF-06 | Phase 2 | Pending |
-| LEAF-07 | Phase 2 | Pending |
+| LEAF-01 | Phase 2 | Complete |
+| LEAF-02 | Phase 2 | Complete |
+| LEAF-03 | Phase 2 | Complete |
+| LEAF-04 | Phase 2 | Complete |
+| LEAF-05 | Phase 2 | Complete |
+| LEAF-06 | Phase 2 | Complete |
+| LEAF-07 | Phase 2 | Complete |
 | MAPLIBRE-01 | Phase 2 | Pending |
 | MAPLIBRE-02 | Phase 2 | Pending |
 | MAPLIBRE-03 | Phase 2 | Pending |
