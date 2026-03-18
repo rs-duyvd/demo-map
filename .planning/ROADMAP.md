@@ -45,7 +45,10 @@ Plans:
   3. Zoom in/out controls are visible and functional on both demo pages
   4. The library name and version badge is displayed on both demo pages
   5. Navigating away from either demo page and back does not throw "Map container already initialized" or WebGL context errors
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 02-01-PLAN.md — Install map deps, add Leaflet CSS to config, create /leaflet demo page
+- [ ] 02-02-PLAN.md — Create /maplibre demo page, verify both demos
 
 ### Phase 3: Token and Bundle Demos
 **Goal**: Two more working demo pages — Mapbox GL JS and OpenLayers — covering the access token pattern and tree-shaken module imports respectively
@@ -74,11 +77,11 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Shared UI | 3/3 | Complete   | 2026-03-18 |
-| 2. First Map Demos | 0/? | Not started | - |
+| 2. First Map Demos | 0/2 | Not started | - |
 | 3. Token and Bundle Demos | 0/? | Not started | - |
 | 4. HERE Maps Demo | 0/? | Not started | - |
