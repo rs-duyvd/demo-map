@@ -43,13 +43,13 @@
 
 ### Mapbox GL JS Demo
 
-- [ ] **MAPBOX-01**: `/mapbox` demo page renders a Mapbox GL JS map using Mapbox access token from `runtimeConfig.public` (CSR-only)
-- [ ] **MAPBOX-02**: Map instance stored in `shallowRef`
-- [ ] **MAPBOX-03**: Hanatour POI markers rendered with custom HTML marker element
-- [ ] **MAPBOX-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
-- [ ] **MAPBOX-05**: Zoom in/out controls visible and functional
-- [ ] **MAPBOX-06**: Library name + version badge displayed on the page
-- [ ] **MAPBOX-07**: Map instance removed on `onUnmounted`
+- [x] **MAPBOX-01**: `/mapbox` demo page renders a Mapbox GL JS map using Mapbox access token from `runtimeConfig.public` (CSR-only)
+- [x] **MAPBOX-02**: Map instance stored in `shallowRef`
+- [x] **MAPBOX-03**: Hanatour POI markers rendered with custom HTML marker element
+- [x] **MAPBOX-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
+- [x] **MAPBOX-05**: Zoom in/out controls visible and functional
+- [x] **MAPBOX-06**: Library name + version badge displayed on the page
+- [x] **MAPBOX-07**: Map instance removed on `onUnmounted`
 
 ### OpenLayers Demo
 
@@ -127,13 +127,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MAPLIBRE-05 | Phase 2 | Complete |
 | MAPLIBRE-06 | Phase 2 | Complete |
 | MAPLIBRE-07 | Phase 2 | Complete |
-| MAPBOX-01 | Phase 3 | Pending |
-| MAPBOX-02 | Phase 3 | Pending |
-| MAPBOX-03 | Phase 3 | Pending |
-| MAPBOX-04 | Phase 3 | Pending |
-| MAPBOX-05 | Phase 3 | Pending |
-| MAPBOX-06 | Phase 3 | Pending |
-| MAPBOX-07 | Phase 3 | Pending |
+| MAPBOX-01 | Phase 3 | Complete |
+| MAPBOX-02 | Phase 3 | Complete |
+| MAPBOX-03 | Phase 3 | Complete |
+| MAPBOX-04 | Phase 3 | Complete |
+| MAPBOX-05 | Phase 3 | Complete |
+| MAPBOX-06 | Phase 3 | Complete |
+| MAPBOX-07 | Phase 3 | Complete |
 | OL-01 | Phase 3 | Pending |
 | OL-02 | Phase 3 | Pending |
 | OL-03 | Phase 3 | Pending |

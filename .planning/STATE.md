@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-02-PLAN.md — /maplibre demo page
-last_updated: "2026-03-19T01:01:34Z"
+stopped_at: Completed 03-01-PLAN.md — /mapbox demo page with Mapbox GL JS access token pattern
+last_updated: "2026-03-19T01:47:44.222Z"
 last_activity: 2026-03-19 — Plan 02-02 complete; MapLibre GL WebGL vector tile demo at /maplibre — both Phase 2 demo pages verified
 progress:
   total_phases: 4
-  completed_phases: 1
-  total_plans: 9
-  completed_plans: 5
+  completed_phases: 2
+  total_plans: 7
+  completed_plans: 6
   percent: 56
 ---
 
@@ -54,6 +54,7 @@ Progress: [█████░░░░░] 56%
 | Phase 01-foundation-and-shared-ui P03 | 1 | 1 tasks | 1 files |
 | Phase 02-first-map-demos P01 | 2 | 2 tasks | 4 files |
 | Phase 02-first-map-demos P02 | 2 | 2 tasks | 1 files |
+| Phase 03-token-and-bundle-demos P01 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,9 @@ Recent decisions affecting current work:
 - [Phase 02-02]: MapLibre uses [lng, lat] coordinate order (opposite of Leaflet's [lat, lng])
 - [Phase 02-02]: OpenFreeMap liberty style (https://tiles.openfreemap.org/styles/liberty) requires no API key
 - [Phase 02-02]: Custom HTML markers via createElement + SVG innerHTML give full visual control without sprite configuration
+- [Phase 03-01]: mapboxgl.accessToken assigned from runtimeConfig.public.mapboxToken before new Map() call — token must be set before map construction
+- [Phase 03-01]: mapbox-gl CSS imported locally in page file (not nuxt.config.ts css array) — consistent with maplibre-gl pattern, tree-shaken per route
+- [Phase 03-01]: ol installed alongside mapbox-gl in single npm install command — both needed for Phase 3 demos
 
 ### Pending Todos
 
@@ -94,6 +98,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-19T01:01:34Z
-Stopped at: Completed 02-02-PLAN.md — /maplibre demo page
+Last session: 2026-03-19T01:47:44.221Z
+Stopped at: Completed 03-01-PLAN.md — /mapbox demo page with Mapbox GL JS access token pattern
 Resume file: None
