@@ -33,13 +33,13 @@
 
 ### MapLibre GL Demo
 
-- [ ] **MAPLIBRE-01**: `/maplibre` demo page renders a MapLibre GL JS map using OpenFreeMap tile source (CSR-only)
-- [ ] **MAPLIBRE-02**: Map instance stored in `shallowRef` (not `ref`)
-- [ ] **MAPLIBRE-03**: Hanatour POI markers rendered with custom HTML marker element
-- [ ] **MAPLIBRE-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
-- [ ] **MAPLIBRE-05**: Zoom in/out controls visible and functional
-- [ ] **MAPLIBRE-06**: Library name + version badge displayed on the page
-- [ ] **MAPLIBRE-07**: Map instance removed on `onUnmounted`
+- [x] **MAPLIBRE-01**: `/maplibre` demo page renders a MapLibre GL JS map using OpenFreeMap tile source (CSR-only)
+- [x] **MAPLIBRE-02**: Map instance stored in `shallowRef` (not `ref`)
+- [x] **MAPLIBRE-03**: Hanatour POI markers rendered with custom HTML marker element
+- [x] **MAPLIBRE-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
+- [x] **MAPLIBRE-05**: Zoom in/out controls visible and functional
+- [x] **MAPLIBRE-06**: Library name + version badge displayed on the page
+- [x] **MAPLIBRE-07**: Map instance removed on `onUnmounted`
 
 ### Mapbox GL JS Demo
 
@@ -120,13 +120,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LEAF-05 | Phase 2 | Complete |
 | LEAF-06 | Phase 2 | Complete |
 | LEAF-07 | Phase 2 | Complete |
-| MAPLIBRE-01 | Phase 2 | Pending |
-| MAPLIBRE-02 | Phase 2 | Pending |
-| MAPLIBRE-03 | Phase 2 | Pending |
-| MAPLIBRE-04 | Phase 2 | Pending |
-| MAPLIBRE-05 | Phase 2 | Pending |
-| MAPLIBRE-06 | Phase 2 | Pending |
-| MAPLIBRE-07 | Phase 2 | Pending |
+| MAPLIBRE-01 | Phase 2 | Complete |
+| MAPLIBRE-02 | Phase 2 | Complete |
+| MAPLIBRE-03 | Phase 2 | Complete |
+| MAPLIBRE-04 | Phase 2 | Complete |
+| MAPLIBRE-05 | Phase 2 | Complete |
+| MAPLIBRE-06 | Phase 2 | Complete |
+| MAPLIBRE-07 | Phase 2 | Complete |
 | MAPBOX-01 | Phase 3 | Pending |
 | MAPBOX-02 | Phase 3 | Pending |
 | MAPBOX-03 | Phase 3 | Pending |

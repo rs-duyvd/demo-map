@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-01-PLAN.md — /leaflet demo page
-last_updated: "2026-03-18T12:55:01.755Z"
-last_activity: 2026-03-18 — Plan 01-03 complete; Home page with 5 library cards at / with responsive grid
+stopped_at: Completed 02-02-PLAN.md — /maplibre demo page
+last_updated: "2026-03-19T01:01:34Z"
+last_activity: 2026-03-19 — Plan 02-02 complete; MapLibre GL WebGL vector tile demo at /maplibre — both Phase 2 demo pages verified
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 5
-  completed_plans: 4
-  percent: 0
+  total_plans: 9
+  completed_plans: 5
+  percent: 56
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Each map library runs in isolation with identical feature coverage (custom marker, detail dialog, zoom) so the team can fairly compare libraries before adopting one in production.
-**Current focus:** Phase 1 — Foundation and Shared UI
+**Current focus:** Phase 2 — First Map Demos
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation and Shared UI)
-Plan: 3 of 4 in current phase
+Phase: 2 of 4 (First Map Demos)
+Plan: 2 of 3 in current phase
 Status: Executing
-Last activity: 2026-03-18 — Plan 01-03 complete; Home page with 5 library cards at / with responsive grid
+Last activity: 2026-03-19 — Plan 02-02 complete; MapLibre GL WebGL vector tile demo at /maplibre — both Phase 2 demo pages verified
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 56%
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation-and-shared-ui P02 | 2 | 2 tasks | 3 files |
 | Phase 01-foundation-and-shared-ui P03 | 1 | 1 tasks | 1 files |
 | Phase 02-first-map-demos P01 | 2 | 2 tasks | 4 files |
+| Phase 02-first-map-demos P02 | 2 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,10 @@ Recent decisions affecting current work:
 - [Phase 02-01]: shallowRef for map instance — Vue proxy traversal on Leaflet internals causes errors
 - [Phase 02-01]: L.divIcon with className: '' removes default white box for clean custom SVG markers
 - [Phase 02-01]: Leaflet CSS in nuxt.config.ts css array for reliable tile layout regardless of mount timing
+- [Phase 02-02]: Static import of maplibre-gl safe on CSR-only pages (ssr: false) — no dynamic import needed unlike Leaflet
+- [Phase 02-02]: MapLibre uses [lng, lat] coordinate order (opposite of Leaflet's [lat, lng])
+- [Phase 02-02]: OpenFreeMap liberty style (https://tiles.openfreemap.org/styles/liberty) requires no API key
+- [Phase 02-02]: Custom HTML markers via createElement + SVG innerHTML give full visual control without sprite configuration
 
 ### Pending Todos
 
@@ -89,6 +94,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-18T12:55:01.753Z
-Stopped at: Completed 02-01-PLAN.md — /leaflet demo page
+Last session: 2026-03-19T01:01:34Z
+Stopped at: Completed 02-02-PLAN.md — /maplibre demo page
 Resume file: None

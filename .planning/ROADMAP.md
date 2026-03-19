@@ -13,7 +13,7 @@ Build a Nuxt 4 comparison demo for five JavaScript map libraries — Leaflet, Ma
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and Shared UI** - Scaffold Nuxt 4 app, configure SSR externals and env, build shared data layer and list page (completed 2026-03-18)
-- [ ] **Phase 2: First Map Demos** - Implement Leaflet and MapLibre GL demos, proving the ClientOnly + onMounted/onUnmounted pattern
+- [x] **Phase 2: First Map Demos** - Implement Leaflet and MapLibre GL demos, proving the ClientOnly + onMounted/onUnmounted pattern (completed 2026-03-19)
 - [ ] **Phase 3: Token and Bundle Demos** - Implement Mapbox GL JS (access token pattern) and OpenLayers (tree-shaking pattern) demos
 - [ ] **Phase 4: HERE Maps Demo** - Implement HERE Maps via sequential CDN script loading; final UI consistency pass
 
@@ -82,6 +82,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Shared UI | 3/3 | Complete   | 2026-03-18 |
-| 2. First Map Demos | 0/2 | Not started | - |
+| 2. First Map Demos | 2/2 | Complete   | 2026-03-19 |
 | 3. Token and Bundle Demos | 0/? | Not started | - |
 | 4. HERE Maps Demo | 0/? | Not started | - |
