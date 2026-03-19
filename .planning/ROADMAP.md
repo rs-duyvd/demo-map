@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and Shared UI** - Scaffold Nuxt 4 app, configure SSR externals and env, build shared data layer and list page (completed 2026-03-18)
 - [x] **Phase 2: First Map Demos** - Implement Leaflet and MapLibre GL demos, proving the ClientOnly + onMounted/onUnmounted pattern (completed 2026-03-19)
-- [ ] **Phase 3: Token and Bundle Demos** - Implement Mapbox GL JS (access token pattern) and OpenLayers (tree-shaking pattern) demos
+- [x] **Phase 3: Token and Bundle Demos** - Implement Mapbox GL JS (access token pattern) and OpenLayers (tree-shaking pattern) demos (completed 2026-03-19)
 - [ ] **Phase 4: HERE Maps Demo** - Implement HERE Maps via sequential CDN script loading; final UI consistency pass
 
 ## Phase Details
@@ -86,5 +86,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Foundation and Shared UI | 3/3 | Complete   | 2026-03-18 |
 | 2. First Map Demos | 2/2 | Complete   | 2026-03-19 |
-| 3. Token and Bundle Demos | 0/2 | Not started | - |
+| 3. Token and Bundle Demos | 2/2 | Complete   | 2026-03-19 |
 | 4. HERE Maps Demo | 0/? | Not started | - |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-01-PLAN.md — /mapbox demo page with Mapbox GL JS access token pattern
-last_updated: "2026-03-19T01:47:44.222Z"
+stopped_at: Completed 03-02-PLAN.md — /openlayers demo page with tree-shaken OpenLayers submodule imports
+last_updated: "2026-03-19T01:51:46.157Z"
 last_activity: 2026-03-19 — Plan 02-02 complete; MapLibre GL WebGL vector tile demo at /maplibre — both Phase 2 demo pages verified
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 7
-  completed_plans: 6
+  completed_plans: 7
   percent: 56
 ---
 
@@ -55,6 +55,7 @@ Progress: [█████░░░░░] 56%
 | Phase 02-first-map-demos P01 | 2 | 2 tasks | 4 files |
 | Phase 02-first-map-demos P02 | 2 | 2 tasks | 1 files |
 | Phase 03-token-and-bundle-demos P01 | 2 | 2 tasks | 3 files |
+| Phase 03-token-and-bundle-demos P02 | 2 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,7 @@ Recent decisions affecting current work:
 - [Phase 03-01]: mapboxgl.accessToken assigned from runtimeConfig.public.mapboxToken before new Map() call — token must be set before map construction
 - [Phase 03-01]: mapbox-gl CSS imported locally in page file (not nuxt.config.ts css array) — consistent with maplibre-gl pattern, tree-shaken per route
 - [Phase 03-01]: ol installed alongside mapbox-gl in single npm install command — both needed for Phase 3 demos
+- [Phase 03-02]: static imports of ol submodules safe on ssr:false pages; Overlay stopEvent:false critical for marker click handling; setTarget+dispose both required for OL cleanup
 
 ### Pending Todos
 
@@ -98,6 +100,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-19T01:47:44.221Z
-Stopped at: Completed 03-01-PLAN.md — /mapbox demo page with Mapbox GL JS access token pattern
+Last session: 2026-03-19T01:51:46.156Z
+Stopped at: Completed 03-02-PLAN.md — /openlayers demo page with tree-shaken OpenLayers submodule imports
 Resume file: None

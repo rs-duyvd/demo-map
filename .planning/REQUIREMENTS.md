@@ -53,13 +53,13 @@
 
 ### OpenLayers Demo
 
-- [ ] **OL-01**: `/openlayers` demo page renders an OpenLayers map (CSR-only)
-- [ ] **OL-02**: Only required OpenLayers modules imported (tree-shaking enforced)
-- [ ] **OL-03**: Hanatour POI markers rendered with custom SVG/HTML overlay
-- [ ] **OL-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
-- [ ] **OL-05**: Zoom in/out controls visible and functional
-- [ ] **OL-06**: Library name + version badge displayed on the page
-- [ ] **OL-07**: Map view destroyed on `onUnmounted`
+- [x] **OL-01**: `/openlayers` demo page renders an OpenLayers map (CSR-only)
+- [x] **OL-02**: Only required OpenLayers modules imported (tree-shaking enforced)
+- [x] **OL-03**: Hanatour POI markers rendered with custom SVG/HTML overlay
+- [x] **OL-04**: Clicking a marker opens the shared `MarkerDialog` with full POI details
+- [x] **OL-05**: Zoom in/out controls visible and functional
+- [x] **OL-06**: Library name + version badge displayed on the page
+- [x] **OL-07**: Map view destroyed on `onUnmounted`
 
 ### HERE Maps Demo
 
@@ -134,13 +134,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MAPBOX-05 | Phase 3 | Complete |
 | MAPBOX-06 | Phase 3 | Complete |
 | MAPBOX-07 | Phase 3 | Complete |
-| OL-01 | Phase 3 | Pending |
-| OL-02 | Phase 3 | Pending |
-| OL-03 | Phase 3 | Pending |
-| OL-04 | Phase 3 | Pending |
-| OL-05 | Phase 3 | Pending |
-| OL-06 | Phase 3 | Pending |
-| OL-07 | Phase 3 | Pending |
+| OL-01 | Phase 3 | Complete |
+| OL-02 | Phase 3 | Complete |
+| OL-03 | Phase 3 | Complete |
+| OL-04 | Phase 3 | Complete |
+| OL-05 | Phase 3 | Complete |
+| OL-06 | Phase 3 | Complete |
+| OL-07 | Phase 3 | Complete |
 | HERE-01 | Phase 4 | Pending |
 | HERE-02 | Phase 4 | Pending |
 | HERE-03 | Phase 4 | Pending |
