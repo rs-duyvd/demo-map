@@ -60,7 +60,10 @@ Plans:
   3. Zoom in/out controls are visible and functional on both demo pages
   4. The library name and version badge is displayed on both demo pages
   5. Navigating away and back causes no errors; both map instances are fully cleaned up on unmount
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 03-01-PLAN.md — Install mapbox-gl and ol deps, create /mapbox demo page with access token pattern
+- [ ] 03-02-PLAN.md — Create /openlayers demo page with tree-shaken imports and Overlay markers
 
 ### Phase 4: HERE Maps Demo
 **Goal**: The final demo page — HERE Maps via sequential CDN script injection — is working with markers, zoom, dialog, and a free-tier disclaimer; all five library demos are complete and consistent
@@ -83,5 +86,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Foundation and Shared UI | 3/3 | Complete   | 2026-03-18 |
 | 2. First Map Demos | 2/2 | Complete   | 2026-03-19 |
-| 3. Token and Bundle Demos | 0/? | Not started | - |
+| 3. Token and Bundle Demos | 0/2 | Not started | - |
 | 4. HERE Maps Demo | 0/? | Not started | - |
