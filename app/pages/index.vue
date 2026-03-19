@@ -4,7 +4,7 @@
     <div class="max-w-7xl mx-auto px-8 pt-12 pb-6">
       <h1 class="text-2xl font-semibold text-gray-900">Map Library Comparison</h1>
       <p class="text-sm text-gray-500 mt-2">
-        Evaluate five JavaScript map libraries on equal footing — same features, same data, fair comparison.
+        Evaluate four JavaScript map libraries on equal footing — same features, same data, fair comparison.
       </p>
     </div>
 
@@ -42,6 +42,22 @@
                 <span class="text-gray-600 ml-1">{{ lib.bundle }}</span>
               </span>
             </div>
+            <!-- Token & pricing row -->
+            <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+              <span
+                v-if="lib.apiKey"
+                class="inline-flex items-center gap-1 text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-0.5 font-medium"
+              >
+                🔑 API token required
+              </span>
+              <span
+                v-else
+                class="inline-flex items-center gap-1 text-green-700 bg-green-50 border border-green-200 rounded px-2 py-0.5 font-medium"
+              >
+                ✓ No API key required
+              </span>
+              <span class="text-gray-400">{{ lib.pricing }}</span>
+            </div>
             <!-- View Demo link -->
             <NuxtLink
               :to="lib.route"
@@ -53,8 +69,8 @@
         </div>
       </div>
 
-      <!-- Row 2: 2 centered cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 lg:max-w-[calc(66.666%+12px)] lg:mx-auto">
+      <!-- Row 2: 1 centered card -->
+      <div class="grid grid-cols-1 gap-6 mt-6 lg:max-w-[calc(33.333%-8px)] lg:mx-auto">
         <div
           v-for="lib in row2Libraries"
           :key="lib.route"
@@ -85,6 +101,22 @@
                 <span class="text-gray-600 ml-1">{{ lib.bundle }}</span>
               </span>
             </div>
+            <!-- Token & pricing row -->
+            <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+              <span
+                v-if="lib.apiKey"
+                class="inline-flex items-center gap-1 text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-0.5 font-medium"
+              >
+                🔑 API token required
+              </span>
+              <span
+                v-else
+                class="inline-flex items-center gap-1 text-green-700 bg-green-50 border border-green-200 rounded px-2 py-0.5 font-medium"
+              >
+                ✓ No API key required
+              </span>
+              <span class="text-gray-400">{{ lib.pricing }}</span>
+            </div>
             <!-- View Demo link -->
             <NuxtLink
               :to="lib.route"
@@ -108,6 +140,8 @@ const libraries = [
     rendering: 'Raster tiles',
     bundle: '~42 kB',
     route: '/leaflet',
+    apiKey: false,
+    pricing: 'Free · OpenStreetMap tiles',
   },
   {
     name: 'MapLibre GL',
@@ -116,6 +150,8 @@ const libraries = [
     rendering: 'WebGL',
     bundle: '~240 kB',
     route: '/maplibre',
+    apiKey: false,
+    pricing: 'Free · OpenFreeMap tiles',
   },
   {
     name: 'Mapbox GL JS',
@@ -124,6 +160,8 @@ const libraries = [
     rendering: 'WebGL',
     bundle: '~260 kB',
     route: '/mapbox',
+    apiKey: true,
+    pricing: 'Free tier: 50k map loads/month · then $5 / 1,000',
   },
   {
     name: 'OpenLayers',
@@ -132,14 +170,8 @@ const libraries = [
     rendering: 'Canvas/WebGL',
     bundle: '~950 kB',
     route: '/openlayers',
-  },
-  {
-    name: 'HERE Maps',
-    description: 'Enterprise mapping platform with traffic, routing, and geocoding via CDN-loaded JS SDK.',
-    license: 'Proprietary',
-    rendering: 'WebGL',
-    bundle: 'CDN only',
-    route: '/here',
+    apiKey: false,
+    pricing: 'Free · OpenStreetMap tiles',
   },
 ]
 

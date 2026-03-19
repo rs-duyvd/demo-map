@@ -70,6 +70,17 @@ onUnmounted(() => {
     <div class="w-16" />
   </div>
 
+  <!-- Info bar -->
+  <div class="h-10 bg-gray-50 border-b border-gray-200 flex items-center px-8 gap-3 text-xs">
+    <span class="inline-flex items-center gap-1 text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-0.5 font-medium">
+      🔑 API token required
+    </span>
+    <span class="inline-flex items-center gap-1 text-gray-700 bg-gray-100 border border-gray-200 rounded px-2 py-0.5 font-medium">
+      Free tier: 50,000 map loads/month
+    </span>
+    <span class="text-gray-400">then $5 / 1,000 map loads · mapbox.com/pricing</span>
+  </div>
+
   <!-- Map container wrapper -->
   <div class="relative">
     <!-- Version badge -->
@@ -81,7 +92,7 @@ onUnmounted(() => {
     <!-- Map div — explicit height prevents 0px collapse -->
     <div
       ref="mapContainer"
-      class="w-full h-[calc(100vh-64px)]"
+      class="w-full h-[calc(100vh-104px)]"
     />
   </div>
 

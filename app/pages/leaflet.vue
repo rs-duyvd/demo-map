@@ -17,8 +17,8 @@ onMounted(async () => {
   leafletVersion.value = leafletModule.version
 
   mapInstance.value = L.map(mapContainer.value!, {
-    center: [16.0, 107.0],
-    zoom: 6,
+    center: [16.4698, 107.5777],
+    zoom: 14,
     zoomControl: true,
   })
 
@@ -35,11 +35,10 @@ onMounted(async () => {
       iconAnchor: [12, 36],
     })
 
-    L.marker([poi.lat, poi.lng], { icon })
-      .on('click', () => {
-        selectedMarker.value = poi
-      })
-      .addTo(mapInstance.value!)
+    const leafletMarker = L.marker([poi.lat, poi.lng], { icon }).addTo(mapInstance.value!)
+    leafletMarker.getElement()?.addEventListener('click', () => {
+      selectedMarker.value = poi
+    })
   }
 })
 
@@ -64,6 +63,17 @@ onUnmounted(() => {
     <div class="w-16" />
   </div>
 
+  <!-- Info bar -->
+  <div class="h-10 bg-gray-50 border-b border-gray-200 flex items-center px-8 gap-3 text-xs">
+    <span class="inline-flex items-center gap-1 text-green-700 bg-green-50 border border-green-200 rounded px-2 py-0.5 font-medium">
+      ✓ No API key required
+    </span>
+    <span class="inline-flex items-center gap-1 text-blue-700 bg-blue-50 border border-blue-200 rounded px-2 py-0.5 font-medium">
+      Free &amp; open source (BSD-2)
+    </span>
+    <span class="text-gray-400">Tiles: OpenStreetMap (free)</span>
+  </div>
+
   <!-- Map container wrapper -->
   <div class="relative">
     <!-- Version badge -->
@@ -75,7 +85,7 @@ onUnmounted(() => {
     <!-- Map div — explicit height prevents 0px collapse -->
     <div
       ref="mapContainer"
-      class="w-full h-[calc(100vh-64px)]"
+      class="w-full h-[calc(100vh-104px)]"
     />
   </div>
 

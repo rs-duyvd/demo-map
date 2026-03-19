@@ -21,7 +21,7 @@ const emit = defineEmits<{
   >
     <div
       v-if="marker"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+      class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50"
       @click.self="emit('close')"
     >
       <Transition

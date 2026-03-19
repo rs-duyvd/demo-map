@@ -23,8 +23,8 @@ onMounted(() => {
   mapInstance.value = new Map({
     container: mapContainer.value!,
     style: 'https://tiles.openfreemap.org/styles/liberty',
-    center: [107.0, 16.0], // [lng, lat] — Vietnam center
-    zoom: 5,
+    center: [107.5777, 16.4698], // [lng, lat] — Hue Imperial Citadel
+    zoom: 14,
   })
 
   // Navigation control (compass + zoom buttons) in top-right
@@ -65,6 +65,17 @@ onUnmounted(() => {
     <div class="w-16" />
   </div>
 
+  <!-- Info bar -->
+  <div class="h-10 bg-gray-50 border-b border-gray-200 flex items-center px-8 gap-3 text-xs">
+    <span class="inline-flex items-center gap-1 text-green-700 bg-green-50 border border-green-200 rounded px-2 py-0.5 font-medium">
+      ✓ No API key required
+    </span>
+    <span class="inline-flex items-center gap-1 text-blue-700 bg-blue-50 border border-blue-200 rounded px-2 py-0.5 font-medium">
+      Free &amp; open source (BSD-2)
+    </span>
+    <span class="text-gray-400">Tiles: OpenFreeMap (free)</span>
+  </div>
+
   <!-- Map container wrapper -->
   <div class="relative">
     <!-- Version badge -->
@@ -76,7 +87,7 @@ onUnmounted(() => {
     <!-- Map div — explicit height prevents 0px collapse -->
     <div
       ref="mapContainer"
-      class="w-full h-[calc(100vh-64px)]"
+      class="w-full h-[calc(100vh-104px)]"
     />
   </div>
 
