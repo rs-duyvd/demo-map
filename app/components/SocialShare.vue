@@ -1,7 +1,14 @@
 <script setup lang="ts">
 interface Props {
-  /** URL to share (should be absolute for Facebook and OG consistency). */
+  /** URL for Web Share / copy (should be absolute). */
   url: string
+  /**
+   * URL for the Facebook sharer only. Defaults to `url`.
+   * Use a URL whose HTML contains the Open Graph tags you want (e.g. same page with `?t=&d=&i=`).
+   */
+  facebookUrl?: string
+  /** Optional quote line for the Facebook composer (best-effort). */
+  facebookQuote?: string
   /** Passed to the Web Share API as `title`. */
   title?: string
   /** Passed to the Web Share API as `text`. */
@@ -15,6 +22,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  facebookUrl: '',
+  facebookQuote: '',
   title: '',
   text: '',
   facebookLabel: 'Share on Facebook',
@@ -37,9 +46,12 @@ const primaryLabel = computed(() =>
   prefersWebShare.value ? props.shareLinkLabel : props.copyLinkLabel,
 )
 
+const facebookSharerUrl = computed(() => props.facebookUrl.trim() || props.url)
+
 async function handleFacebookShare() {
   feedback.value = ''
-  const result = openFacebookSharePopup(props.url)
+  const quote = props.facebookQuote.trim() || undefined
+  const result = openFacebookSharePopup(facebookSharerUrl.value, quote ? { quote } : undefined)
   if (!result.ok && result.reason === 'popup_blocked') {
     feedback.value = 'Popup was blocked. Allow popups for this site, or open Facebook and paste the link.'
   }

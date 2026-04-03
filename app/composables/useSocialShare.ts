@@ -22,14 +22,25 @@ function isClient(): boolean {
   return typeof window !== 'undefined' && typeof document !== 'undefined'
 }
 
+export interface FacebookShareOptions {
+  /** Optional pre-filled text in the share composer (support varies by Facebook surface). */
+  quote?: string
+}
+
 /**
  * Opens the Facebook sharer in a popup. If the browser blocks the popup, returns `popup_blocked`.
+ * Link previews are taken from Open Graph tags at `url` — pass a URL whose server renders matching og:* tags (e.g. this page with `?t=&d=&i=` query params).
  */
-export function openFacebookSharePopup(url: string): FacebookShareResult {
+export function openFacebookSharePopup(
+  url: string,
+  options?: FacebookShareOptions,
+): FacebookShareResult {
   if (!isClient())
     return { ok: false, reason: 'popup_blocked' }
 
-  const sharerUrl = `${FACEBOOK_SHARER}?u=${encodeURIComponent(url)}`
+  let sharerUrl = `${FACEBOOK_SHARER}?u=${encodeURIComponent(url)}`
+  if (options?.quote?.trim())
+    sharerUrl += `&quote=${encodeURIComponent(options.quote.trim())}`
   const popup = window.open(
     sharerUrl,
     'facebook-share',

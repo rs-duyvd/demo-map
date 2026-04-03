@@ -40,49 +40,74 @@ const { data: article } = await useAsyncData('share-example-article', async () =
       'This page loads article data with useAsyncData and sets SSR-friendly og:* tags via useSeoMeta so crawlers see title, description, and image.',
     content:
       'You can edit the fields below to change what appears on this page, in Open Graph meta tags (after hydration), and what is sent to the Web Share API. The canonical page URL is the default share link; override it to test sharing another destination.',
-    image: 'https://b2c-hnt.rshcmdevops.com/assets/images/logo-horizontal.svg',
+    image: 'https://www.shutterstock.com/image-photo/winter-sunset-paints-sky-vibrant-600w-2703127389.jpg',
   }
   return result
 })
 
-const canonicalUrl = computed(() =>
-  buildAbsoluteUrl(siteUrl.value, route.fullPath.split('#')[0] ?? route.path),
-)
-
-/** User-editable preview: synced from fetched article, then local edits apply. */
+/** User-editable preview: URL query overrides defaults from useAsyncData. */
 const form = reactive({
   title: '',
   description: '',
   content: '',
   image: '',
-  /** Share link (defaults to this page’s canonical URL). */
+  /** Optional: share a different URL (Facebook will scrape that page’s tags, not this form). */
   shareUrl: '',
 })
 
-watch(
-  article,
-  (a) => {
-    if (!a)
-      return
-    form.title = a.title
-    form.description = a.description
-    form.content = a.content
-    form.image = a.image
-    if (!form.shareUrl.trim())
-      form.shareUrl = canonicalUrl.value
-  },
-  { immediate: true },
-)
-
-watch(canonicalUrl, (url) => {
-  if (!form.shareUrl.trim())
-    form.shareUrl = url
+/**
+ * Facebook only reads the **URL** you pass to the sharer; the preview comes from scraping that URL.
+ * We encode title / description / image / content as query params so this page’s SSR can render
+ * matching og:* tags when Facebook’s crawler requests that full URL.
+ */
+const builtPageShareUrl = computed(() => {
+  const params = new URLSearchParams()
+  const t = form.title.trim()
+  const d = form.description.trim().slice(0, 3500)
+  const i = form.image.trim()
+  const c = form.content.trim().slice(0, 2000)
+  if (t)
+    params.set('t', t)
+  if (d)
+    params.set('d', d)
+  if (i)
+    params.set('i', i)
+  if (c)
+    params.set('c', c)
+  const qs = params.toString()
+  const path = route.path
+  const base = buildAbsoluteUrl(siteUrl.value, path)
+  return qs ? `${base}?${qs}` : base
 })
+
+function pickQueryOrArticle(
+  key: string,
+  fallback: string,
+): string {
+  const raw = route.query[key]
+  return typeof raw === 'string' && raw.length > 0 ? raw : fallback
+}
+
+function mergeFromQueryAndArticle() {
+  const a = article.value
+  form.title = pickQueryOrArticle('t', a?.title ?? '')
+  form.description = pickQueryOrArticle('d', a?.description ?? '')
+  form.image = pickQueryOrArticle('i', a?.image ?? '')
+  form.content = pickQueryOrArticle('c', a?.content ?? '')
+}
+
+watch([article, () => route.query], mergeFromQueryAndArticle, { immediate: true })
 
 const shareUrlEffective = computed(() => {
-  const raw = form.shareUrl.trim()
-  return raw || canonicalUrl.value
+  const custom = form.shareUrl.trim()
+  if (custom)
+    return custom
+  return builtPageShareUrl.value
 })
+
+const canonicalUrl = computed(() =>
+  buildAbsoluteUrl(siteUrl.value, route.fullPath.split('#')[0] ?? route.path),
+)
 
 const ogImageUrl = computed(() => {
   const raw = form.image.trim() || String(config.public.ogImageDefault ?? '')
@@ -104,7 +129,8 @@ useSeoMeta({
   ogTitle: seoTitle,
   ogDescription: seoDescription,
   ogImage: ogImageUrl,
-  ogUrl: canonicalUrl,
+  /** Match the URL actually shared so og:url aligns with what Facebook scrapes. */
+  ogUrl: shareUrlEffective,
   ogType: 'article',
   twitterCard: 'summary_large_image',
   twitterTitle: seoTitle,
@@ -113,7 +139,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: canonicalUrl }],
+  link: [{ rel: 'canonical', href: shareUrlEffective }],
 })
 
 /** Combined text for Web Share (description + body), length-limited. */
@@ -130,9 +156,11 @@ const shareBodyText = computed(() => {
         Share preview &amp; Open Graph
       </h1>
       <p class="mt-2 text-sm text-gray-600">
-        Adjust title, text, image URL, and the link used when sharing. Meta tags update from these
-        values in the browser; crawlers still see the server-rendered HTML from the initial load
-        unless you rebuild or use SSR with the same values.
+        Facebook’s sharer only receives a URL — the link preview is built from Open Graph tags on
+        <strong>that</strong> URL. This page puts your edits in the query string (
+        <code class="rounded bg-gray-100 px-1">?t=&amp;d=&amp;i=&amp;c=</code>
+        ) so a request to the same link returns matching og:* tags from the server. Use a custom
+        “Link to share” only when you intend to preview another site’s metadata.
       </p>
 
       <!-- Editable share payload -->
@@ -245,17 +273,24 @@ const shareBodyText = computed(() => {
           Share
         </h2>
         <p class="text-sm text-gray-500">
-          Facebook opens the sharer in a popup. Web Share / copy uses the link and text fields above.
+          “Share on Facebook” uses the URL below (with query params when this page is shared). Web
+          Share / copy uses the same URL plus the combined text.
         </p>
         <SocialShare
           :url="shareUrlEffective"
+          :facebook-url="shareUrlEffective"
+          :facebook-quote="form.description.trim()"
           :title="form.title"
           :text="shareBodyText"
         />
       </section>
 
       <p class="mt-10 text-xs text-gray-400">
-        Canonical URL (og:url):
+        Effective share URL (og:url / canonical):
+        <span class="break-all text-gray-500">{{ shareUrlEffective }}</span>
+      </p>
+      <p class="mt-1 text-xs text-gray-400">
+        Route + query (address bar):
         <span class="break-all text-gray-500">{{ canonicalUrl }}</span>
       </p>
     </div>
