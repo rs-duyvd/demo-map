@@ -40,7 +40,7 @@ const { data: article } = await useAsyncData('share-example-article', async () =
       'This page loads article data with useAsyncData and sets SSR-friendly og:* tags via useSeoMeta so crawlers see title, description, and image.',
     content:
       'You can edit the fields below to change what appears on this page, in Open Graph meta tags (after hydration), and what is sent to the Web Share API. The canonical page URL is the default share link; override it to test sharing another destination.',
-    image: 'https://placehold.co/1200x630/2563eb/ffffff?text=Open+Graph+Preview',
+    image: 'https://b2c-hnt.rshcmdevops.com/assets/images/logo-horizontal.svg',
   }
   return result
 })
